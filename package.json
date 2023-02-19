@@ -1,0 +1,22 @@
+{
+  "name": "minor2",
+  "version": "1.0.0",
+  "description": "Test meeting\r Edited by Saksham",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHIVENDRA8004/Smart-Expense-Repository.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SHIVENDRA8004/Smart-Expense-Repository/issues"
+  },
+  "homepage": "https://github.com/SHIVENDRA8004/Smart-Expense-Repository#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
