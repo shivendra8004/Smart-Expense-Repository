@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const colors = require("colors");
+const dotenv = require("dotenv");
+dotenv.config();
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URL);
