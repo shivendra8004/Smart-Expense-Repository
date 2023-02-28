@@ -3,6 +3,9 @@ const cors = require("cors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const colors = require("colors");
+const connectDB = require("./config/connectDB");
+// Database Connecting
+connectDB();
 // Configuring env file
 dotenv.config();
 // Rest Object
@@ -20,5 +23,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 3000;
 // Listening
 app.listen(PORT, () => {
-  console.log(`Server Started Listening on Port ${PORT}`);
+  console.log(`Server Started Listening on Port ${PORT}`.bgCyan);
 });
