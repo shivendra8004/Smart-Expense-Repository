@@ -1,2 +1,8 @@
+# Environmental Variables
 /.env
 .env/
+
+# NodeModules
+
+/node_modules
+node_modules/
