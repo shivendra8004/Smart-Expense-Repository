@@ -1,2 +1,7 @@
-export const loginController = async () => {};
-export const registerController = async () => {};
+const loginController = async () => {};
+const registerController = async () => {};
+
+module.exports = {
+  loginController,
+  registerController,
+};

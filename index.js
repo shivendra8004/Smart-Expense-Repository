@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const connectDB = require("./config/connectDB");
+const router = require("./routes/user.route");
 // Database Connecting
 connectDB();
 // Configuring env file
@@ -18,6 +19,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Working Properly");
 });
+app.use("/user", router);
 
 // Port Variable
 const PORT = process.env.PORT || 3000;
