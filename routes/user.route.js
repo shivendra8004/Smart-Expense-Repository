@@ -3,9 +3,6 @@ const { loginController, registerController } = require("../controllers/user.con
 const router = express.Router();
 
 // Login Router
-router.get("/login", (req, res) => {
-  res.send("Router working properly");
-});
 router.post("/login", loginController);
 
 // Register Router
