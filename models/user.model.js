@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema();
-const userSchema = new schema(
+const Schema = mongoose.Schema;
+const userSchema = new Schema(
   {
     name: {
       type: String,
@@ -12,7 +12,7 @@ const userSchema = new schema(
       unique: true,
     },
     password: {
-      type: password,
+      type: String,
       required: [true, "Password is Required"],
     },
   },
