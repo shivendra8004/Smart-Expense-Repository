@@ -19,7 +19,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Working Properly");
 });
-app.use("/user", router);
+app.get("/user", (req, res) => {
+  res.send("User Working");
+});
 
 // Port Variable
 const PORT = process.env.PORT || 3000;
