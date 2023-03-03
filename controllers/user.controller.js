@@ -1,1 +1,2 @@
-export const userController = async () => {};
+export const loginController = async () => {};
+export const registerController = async () => {};
