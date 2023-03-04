@@ -18,13 +18,13 @@ const Header = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link class="navbar-brand" href="#">
+            <Link class="navbar-brand" to="/">
               Smart Expense
             </Link>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <Link class="nav-link active" aria-current="page" href="#">
-                  Home
+                <Link class="nav-link active" aria-current="page" to="/user">
+                  User
                 </Link>
               </li>
             </ul>
