@@ -6,3 +6,6 @@
 .content {
   height: 84vh;
 }
+.navbar {
+  background-color: aquamarine !important;
+}
