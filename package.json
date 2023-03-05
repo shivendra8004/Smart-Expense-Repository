@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SHIVENDRA8004/Smart-Expense-Repository#readme",
   "dependencies": {
+    "antd": "^5.2.3",
     "colors": "^1.4.0",
     "concurrently": "^7.6.0",
     "cors": "^2.8.5",
