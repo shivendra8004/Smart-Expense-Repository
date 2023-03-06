@@ -15,3 +15,6 @@
   align-items: center;
   justify-content: center;
 }
+.login {
+  min-height: 100vh !important;
+}
