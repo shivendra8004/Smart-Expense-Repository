@@ -15,6 +15,10 @@
   align-items: center;
   justify-content: center;
 }
+.register div,
+.login div {
+  width: 300px !important;
+}
 .login {
   min-height: 100vh !important;
 }
