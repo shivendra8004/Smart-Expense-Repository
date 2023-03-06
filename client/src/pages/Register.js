@@ -3,7 +3,7 @@ import React from "react";
 const Register = () => {
   return (
     <>
-      <div className="d-flex align-items-center justify-content-center">
+      <div className="register">
         <h1>Login Here</h1>
       </div>
     </>

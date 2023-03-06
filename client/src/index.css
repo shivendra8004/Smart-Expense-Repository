@@ -9,3 +9,9 @@
 .navbar {
   background-color: aquamarine !important;
 }
+.register {
+  min-height: 100vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
