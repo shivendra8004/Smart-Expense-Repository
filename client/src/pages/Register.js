@@ -2,7 +2,10 @@ import React from "react";
 import { Form, Input } from "antd";
 import { Link } from "react-router-dom";
 const Register = () => {
-  const handleSubmit = () => {};
+  // Form Submit
+  const handleSubmit = (values) => {
+    console.log(values);
+  };
   return (
     <>
       <div className="register">
