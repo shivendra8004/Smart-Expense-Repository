@@ -1,10 +1,14 @@
 import React from "react";
-
+import { Form, Input } from "antd";
 const Register = () => {
   return (
     <>
       <div className="register">
-        <h1>Login Here</h1>
+        <Form layout="vertical">
+          <Form.Item label="Enter Name" name="name">
+            <Input />
+          </Form.Item>
+        </Form>
       </div>
     </>
   );
