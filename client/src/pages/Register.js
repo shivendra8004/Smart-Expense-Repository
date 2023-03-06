@@ -2,10 +2,11 @@ import React from "react";
 import { Form, Input } from "antd";
 import { Link } from "react-router-dom";
 const Register = () => {
+  const handleSubmit = () => {};
   return (
     <>
       <div className="register">
-        <Form layout="vertical">
+        <Form layout="vertical" onFinish={handleSubmit}>
           <h2>Register User </h2>
           <Form.Item label="Name" name="name">
             <Input />
@@ -18,8 +19,8 @@ const Register = () => {
           </Form.Item>
           <div className="d-flex justify-content-between">
             <Link to="/login">Already Registered? Login</Link>
+            <button className="btn btn-primary">Register</button>
           </div>
-          <button className="btn btn-primary">Register</button>
         </Form>
       </div>
     </>
