@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1", mainRouter);
 
 // Port Variable
-const PORT = process.env.PORT || 5500;
+const PORT = 5500 || process.env.PORT;
 // Listening
 app.listen(PORT, () => {
   console.log(`Server Started Listening on Port ${PORT}`.bgCyan);
