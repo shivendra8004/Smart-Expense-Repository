@@ -19,7 +19,7 @@ const Login = () => {
       navigate("/");
     } catch (error) {
       setLoading(false);
-      message.error("Invalid Username or Password");
+      message.error("Something Went Wrong! Try Again");
     }
   };
   return (
