@@ -15,7 +15,7 @@ const Register = () => {
       await axios.post("/users/register", values);
       message.success("Successfully Registered");
       setLoading(false);
-      navigate("/users/login");
+      navigate("/login");
     } catch (error) {
       setLoading(false);
       message.error("Invalid Username or Password");
