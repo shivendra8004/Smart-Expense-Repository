@@ -15,6 +15,7 @@ const Login = () => {
       await axios.post("/users/login", values);
       setLoading(false);
       message.success("Login Suceessful");
+      navigate("/");
     } catch (error) {
       setLoading(false);
       message.error("Invalid Username or Password");
