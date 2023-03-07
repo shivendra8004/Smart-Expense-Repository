@@ -1,8 +1,8 @@
 const express = require("express");
-const router = require("./user.route");
+const userRouter = require("./user.route");
 const mainRouter = express.Router();
 mainRouter.get("/", (req, res) => {
   res.send("Default Response");
 });
-mainRouter.use("/user", router);
+mainRouter.use("/user", userRouter);
 module.exports = mainRouter;
