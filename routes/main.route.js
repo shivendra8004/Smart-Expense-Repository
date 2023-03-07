@@ -4,5 +4,5 @@ const mainRouter = express.Router();
 mainRouter.get("/", (req, res) => {
   res.send("Default Response");
 });
-mainRouter.use("/user", userRouter);
+mainRouter.use("/users", userRouter);
 module.exports = mainRouter;

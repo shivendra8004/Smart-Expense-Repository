@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const Register = () => {
@@ -7,8 +7,12 @@ const Register = () => {
   // Form Submit
   const handleSubmit = async (values) => {
     try {
-      await axios.post("/users/register");
-    } catch (error) {}
+      await axios.post("/users/register", values);
+      message.success("Successfully Registered");
+      navigate("/users/login");
+    } catch (error) {
+      message.warning("Invalid Username or Password");
+    }
   };
   return (
     <>
