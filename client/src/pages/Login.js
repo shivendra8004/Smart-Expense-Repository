@@ -12,9 +12,10 @@ const Login = () => {
   const handleSubmit = async (values) => {
     try {
       setLoading(true);
-      await axios.post("/users/login", values);
+      const { data } = await axios.post("/users/login", values);
       setLoading(false);
       message.success("Login Suceessful");
+      localStorage.setItem("user", JSON.stringify({ ...data, password: " " }));
       navigate("/");
     } catch (error) {
       setLoading(false);
