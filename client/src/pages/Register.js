@@ -1,10 +1,14 @@
 import React from "react";
 import { Form, Input } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 const Register = () => {
+  const navigate = useNavigate();
   // Form Submit
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = async (values) => {
+    try {
+      await axios.post("/users/register");
+    } catch (error) {}
   };
   return (
     <>
