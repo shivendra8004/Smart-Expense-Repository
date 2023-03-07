@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:3000/api/v1",
   "name": "client",
   "version": "0.1.0",
   "private": true,
