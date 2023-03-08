@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const [loginUser, setLoginUser] = useState("");
@@ -29,9 +28,14 @@ const Header = () => {
             Smart Expense
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/user">
+                <p className="nav-link active" aria-current="page">
                   {loginUser && loginUser.name}
-                </Link>
+                </p>
+              </li>
+              <li className="nav-item">
+                <p className="nav-link active" aria-current="page">
+                  Logout
+                </p>
               </li>
             </ul>
           </div>
