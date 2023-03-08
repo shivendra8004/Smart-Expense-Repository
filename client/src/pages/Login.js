@@ -1,5 +1,5 @@
 import { Form, Input, message } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../components/Spinner";
@@ -22,6 +22,13 @@ const Login = () => {
       message.error("Something Went Wrong! Try Again");
     }
   };
+  // Preventing user from Login Multiple time when user is already logged in
+
+  useEffect(() => {
+    if (localStorage.getItem("user")) {
+      navigate("/");
+    }
+  }, [navigate]);
   return (
     <>
       <div className="login d-flex align-items-center justify-content-center">

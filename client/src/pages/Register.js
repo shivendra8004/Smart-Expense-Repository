@@ -21,7 +21,7 @@ const Register = () => {
       message.error("Invalid Username or Password");
     }
   };
-  // Preventing user from Login Multiple time when user is already logged in
+  // Preventing user from Registering Multiple time when user is already logged in
 
   useEffect(() => {
     if (localStorage.getItem("user")) {
