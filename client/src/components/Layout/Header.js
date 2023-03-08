@@ -1,3 +1,4 @@
+import { message } from "antd";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -14,6 +15,7 @@ const Header = () => {
   const logOutHandler = () => {
     localStorage.removeItem("user");
     navigate("/login");
+    message.success("Logout Successfully");
   };
   return (
     <>
