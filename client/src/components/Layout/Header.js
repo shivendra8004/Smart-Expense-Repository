@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo01"
@@ -15,17 +15,15 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" />
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link class="navbar-brand" to="/">
-              Smart Expense
-            </Link>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <Link class="nav-link active" aria-current="page" to="/user">
-                  User
-                </Link>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <link className="navbar-brand" to="/" />
+            Smart Expense
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/user" />
+                User
               </li>
             </ul>
           </div>
