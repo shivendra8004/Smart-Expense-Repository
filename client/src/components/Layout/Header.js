@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [loginUser, setLoginUser] = useState("");
@@ -9,6 +9,12 @@ const Header = () => {
       setLoginUser(user);
     }
   }, []);
+  // LogOut Handler
+  const navigate = useNavigate();
+  const logOutHandler = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -34,12 +40,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <button
-                  className="btn btn-primary"
-                  onClick={() => {
-                    localStorage.removeItem("user");
-                  }}
-                >
+                <button className="btn btn-primary" onClick={logOutHandler}>
                   Logout
                 </button>
               </li>
