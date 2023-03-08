@@ -34,9 +34,14 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/user">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    localStorage.removeItem("user");
+                  }}
+                >
                   Logout
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
