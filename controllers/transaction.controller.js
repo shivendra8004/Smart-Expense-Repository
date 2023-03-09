@@ -1,6 +1,12 @@
 const transactionModel = require("../models/transaction.model");
-const getAllTransactions = (req, res) => {
-  res.send("Getting All Transactions");
+const getAllTransactions = async (req, res) => {
+  try {
+    const transactions = await transactionModel.find({ createdAt: -1 });
+    res.status(201).json({
+      success: true,
+      transactions,
+    });
+  } catch (error) {}
 };
 const addTransactions = async (req, res) => {
   try {
