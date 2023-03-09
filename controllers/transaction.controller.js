@@ -7,7 +7,12 @@ const addTransactions = async (req, res) => {
     const newTransaction = new transactionModel(req.body);
     await newTransaction.save();
     res.status(201).send("Transaction Created Successfully");
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error,
+    });
+  }
 };
 module.exports = {
   getAllTransactions,
