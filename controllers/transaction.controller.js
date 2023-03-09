@@ -6,7 +6,12 @@ const getAllTransactions = async (req, res) => {
       success: true,
       transactions,
     });
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error,
+    });
+  }
 };
 const addTransactions = async (req, res) => {
   try {
