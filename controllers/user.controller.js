@@ -1,4 +1,3 @@
-const { Schema } = require("mongoose");
 const userModel = require("../models/user.model");
 // Controllers
 const loginController = async (req, res) => {
