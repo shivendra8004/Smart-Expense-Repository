@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { Modal } from "antd";
+import { Form, Input, Modal } from "antd";
 import Layout from "../components/Layout/Layout";
 
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
+  // Handle Submit Function
+  const HandleSubmit = (values) => {
+    console.log(values);
+  };
   return (
     <Layout>
       <div className="filters">
@@ -16,7 +20,11 @@ const HomePage = () => {
       </div>
       <div className="content"></div>
       <Modal title="Add Transaction" visible={showModal} onCancel={() => setShowModal(false)} footer={false}>
-        <h2>Hello</h2>
+        <Form layout="verticle" onFinish={HandleSubmit}>
+          <Form.Item label="Amount" name="amount">
+            <Input type="text" required="True" />
+          </Form.Item>
+        </Form>
       </Modal>
     </Layout>
   );
