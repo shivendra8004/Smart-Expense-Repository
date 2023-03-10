@@ -22,7 +22,7 @@ const HomePage = () => {
       <Modal title="Add Transaction" open={showModal} onCancel={() => setShowModal(false)} footer={false}>
         <Form layout="verticle" onFinish={HandleSubmit}>
           <Form.Item label="Amount" name="amount">
-            <Input type="text" required="True" />
+            <Input type="text" />
           </Form.Item>
           <Form.Item label="Type" name="type">
             <Select>
@@ -46,13 +46,13 @@ const HomePage = () => {
             </Select>
           </Form.Item>
           <Form.Item label="Date" name="date">
-            <Input type="date" required="True" />
+            <Input type="date" />
           </Form.Item>
           <Form.Item label="Reference" name="reference">
-            <Input type="text" required="True" />
+            <Input type="text" />
           </Form.Item>
           <Form.Item label="Description" name="description">
-            <Input type="text" required="False" />
+            <Input type="text" />
           </Form.Item>
           <div className="d-flex justify-content-center">
             <button type="submit" className="btn btn-primary">
