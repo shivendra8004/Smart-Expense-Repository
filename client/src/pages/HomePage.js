@@ -24,6 +24,19 @@ const HomePage = () => {
           <Form.Item label="Amount" name="amount">
             <Input type="text" required="True" />
           </Form.Item>
+          <Form.Item label="Category" name="category">
+            <Input type="text" required="True" />
+          </Form.Item>
+          <Form.Item label="Reference" name="reference">
+            <Input type="text" required="True" />
+          </Form.Item>
+          <Form.Item label="Description" name="description">
+            <Input type="text" required="False" />
+          </Form.Item>
+          <Form.Item label="Date" name="date">
+            <Input type="date" required="True" />
+          </Form.Item>
+          <button className="btn btn-primary">Submit</button>
         </Form>
       </Modal>
     </Layout>
