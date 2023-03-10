@@ -22,3 +22,10 @@
 .login {
   min-height: 100vh !important;
 }
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  box-shadow: 0 0 5px;
+}
