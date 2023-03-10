@@ -5,6 +5,10 @@ const transactionSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Amount is Required"],
     },
+    type: {
+      type: String,
+      required: [true, "Type is Required"],
+    },
     category: {
       type: String,
       required: [true, "Category is Required"],
