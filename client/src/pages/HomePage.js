@@ -54,7 +54,9 @@ const HomePage = () => {
           <Form.Item label="Description" name="description">
             <Input type="text" required="False" />
           </Form.Item>
-          <button className="btn btn-primary">Submit</button>
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-primary">Save</button>
+          </div>
         </Form>
       </Modal>
     </Layout>
