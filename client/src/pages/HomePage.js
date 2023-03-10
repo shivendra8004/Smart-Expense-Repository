@@ -19,7 +19,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="content"></div>
-      <Modal title="Add Transaction" visible={showModal} onCancel={() => setShowModal(false)} footer={false}>
+      <Modal title="Add Transaction" open={showModal} onCancel={() => setShowModal(false)} footer={false}>
         <Form layout="verticle" onFinish={HandleSubmit}>
           <Form.Item label="Amount" name="amount">
             <Input type="text" required="True" />
@@ -55,7 +55,9 @@ const HomePage = () => {
             <Input type="text" required="False" />
           </Form.Item>
           <div className="d-flex justify-content-center">
-            <button className="btn btn-primary">Save</button>
+            <button type="submit" className="btn btn-primary">
+              Save
+            </button>
           </div>
         </Form>
       </Modal>
