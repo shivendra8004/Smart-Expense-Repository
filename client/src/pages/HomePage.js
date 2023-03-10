@@ -15,7 +15,9 @@ const HomePage = () => {
         </div>
       </div>
       <div className="content"></div>
-      <Modal title="Add Transaction" visible={showModal}></Modal>
+      <Modal title="Add Transaction" visible={showModal} onCancel={() => setShowModal(false)} footer={false}>
+        <h2>Hello</h2>
+      </Modal>
     </Layout>
   );
 };
