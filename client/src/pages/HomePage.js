@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Input, Modal, Select, message } from "antd";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
-
+import Spinner from "../components/Spinner";
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -15,10 +15,14 @@ const HomePage = () => {
       setLoading(false);
       message.success("Transaction Added Successfully");
       setShowModal(false);
-    } catch (error) {}
+    } catch (error) {
+      setLoading(false);
+      message.error("Error in Adding Transaction");
+    }
   };
   return (
     <Layout>
+      {loading && <Spinner />}
       <div className="filters">
         <div>Range Filters</div>
         <div>
