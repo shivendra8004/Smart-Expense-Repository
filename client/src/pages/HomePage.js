@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Modal, Select } from "antd";
+import { Form, Input, Modal, Select, message } from "antd";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
 
@@ -12,6 +12,9 @@ const HomePage = () => {
       const user = localStorage.getItem("user");
       setLoading(true);
       await axios.post("/transactions/all-transaction", { ...values, userid: user._id });
+      setLoading(false);
+      message.success("Transaction Added Successfully");
+      setShowModal(false);
     } catch (error) {}
   };
   return (
