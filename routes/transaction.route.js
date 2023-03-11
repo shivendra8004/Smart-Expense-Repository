@@ -4,6 +4,6 @@ const transactionRouter = express.Router();
 // Routes
 // POST|| ADD Transaction
 transactionRouter.post("/add-transaction", addTransactions);
-// GET|| GET Transactions
-transactionRouter.get("/all-transaction", getAllTransactions);
+// POST|| POST Transactions
+transactionRouter.post("/all-transaction", getAllTransactions);
 module.exports = transactionRouter;
