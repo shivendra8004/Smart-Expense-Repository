@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { Form, Input, Modal, Select } from "antd";
 import Layout from "../components/Layout/Layout";
+import axios from "axios";
 
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   // Handle Submit Function
-  const HandleSubmit = (values) => {
-    console.log(values);
+  const HandleSubmit = async (values) => {
+    try {
+      const user = localStorage.getItem("user");
+      setLoading(true);
+      await axios.post("/transactions/all-transaction", { ...values, userid: user._id });
+    } catch (error) {}
   };
   return (
     <Layout>
