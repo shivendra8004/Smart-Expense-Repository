@@ -11,7 +11,7 @@ const HomePage = () => {
     try {
       const user = localStorage.getItem("user");
       setLoading(true);
-      const response = await axios.post("/transactions/all-transaction", { ...values, userid: user._id });
+      const response = await axios.post("/transactions/addtransaction", { ...values, userid: user._id });
       setLoading(false);
       message.success("Transaction Added Successfully");
       setShowModal(false);

@@ -19,10 +19,7 @@ const addTransactions = async (req, res) => {
     await newTransaction.save();
     res.status(201).send("Transaction Created Successfully");
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      error,
-    });
+    res.status(400).send(error);
   }
 };
 module.exports = {
