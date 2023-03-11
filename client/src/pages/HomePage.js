@@ -1,25 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Input, Modal, Select, message } from "antd";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import Spinner from "../components/Spinner";
+import { getAllTransactions } from "../../../controllers/transaction.controller";
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [allTransactions, setAllTransactions] = useState([]);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
       const user = localStorage.getItem("user");
       setLoading(true);
-      await axios.post("/transactions/all-transaction", { ...values, userid: user._id });
+      const response = await axios.post("/transactions/all-transaction", { ...values, userid: user._id });
       setLoading(false);
       message.success("Transaction Added Successfully");
       setShowModal(false);
+      setAllTransactions(response.data);
+      console.log(response.data);
     } catch (error) {
       setLoading(false);
       message.error("Error in Adding Transaction");
     }
   };
+  // Use Effect Hook
+  useEffect(() => {
+    getAllTransactions();
+  }, []);
   return (
     <Layout>
       {loading && <Spinner />}
