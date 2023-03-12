@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Input, Modal, Select, message } from "antd";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
@@ -6,6 +6,25 @@ import Spinner from "../components/Spinner";
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [allTransaction, setAllTransaction] = useState([]);
+  // Get All Transactions
+  const getAllTransaction = async () => {
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      setLoading(true);
+      const response = await axios.post("/transactions/get-transaction", { userid: user._id });
+      setLoading(false);
+      setAllTransaction(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+      message.error("Error in Fetching Transactions from Database");
+    }
+  };
+  // GetAllTransaction Hook
+  useEffect(() => {
+    getAllTransaction();
+  }, []);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
