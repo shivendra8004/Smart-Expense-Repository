@@ -34,11 +34,11 @@ const HomePage = () => {
       setLoading(false);
       message.success("Transaction Added Successfully");
       setShowModal(false);
+      getAllTransaction();
     } catch (error) {
       setLoading(false);
       message.error("Error in Adding Transaction");
     }
-    console.log(values);
   };
   return (
     <Layout>
