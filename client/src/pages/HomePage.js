@@ -8,18 +8,18 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
-    // try {
-    //   const user = localStorage.getItem("user");
-    //   setLoading(true);
-    //   const response = await axios.post("/transactions/addtransaction", { ...values, userid: user._id });
-    //   setLoading(false);
-    //   message.success("Transaction Added Successfully");
-    //   setShowModal(false);
-    //   console.log(response.data);
-    // } catch (error) {
-    //   setLoading(false);
-    //   message.error("Error in Adding Transaction");
-    // }
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      setLoading(true);
+      const response = await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
+      setLoading(false);
+      message.success("Transaction Added Successfully");
+      setShowModal(false);
+      // console.log(response.data);
+    } catch (error) {
+      setLoading(false);
+      message.error("Error in Adding Transaction");
+    }
     console.log(values);
   };
   return (
