@@ -11,11 +11,10 @@ const HomePage = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
-      const response = await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
+      await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
       setLoading(false);
       message.success("Transaction Added Successfully");
       setShowModal(false);
-      // console.log(response.data);
     } catch (error) {
       setLoading(false);
       message.error("Error in Adding Transaction");
