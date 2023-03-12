@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Input, Modal, Select, message } from "antd";
+import { Form, Input, Modal, Select, Table, message } from "antd";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import Spinner from "../components/Spinner";
@@ -81,7 +81,9 @@ const HomePage = () => {
           </button>
         </div>
       </div>
-      <div className="content"></div>
+      <div className="content">
+        <Table columns={columns} dataSource={allTransaction} />
+      </div>
       <Modal title="Add Transaction" open={showModal} onCancel={() => setShowModal(false)} footer={false}>
         <Form layout="verticle" onFinish={HandleSubmit}>
           <Form.Item label="Amount" name="amount">
