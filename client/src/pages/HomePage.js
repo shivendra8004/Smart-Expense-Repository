@@ -45,7 +45,6 @@ const HomePage = () => {
       const response = await axios.post("/transactions/get-transaction", { userid: user._id });
       setLoading(false);
       setAllTransaction(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
       message.error("Error in Fetching Transactions from Database");
