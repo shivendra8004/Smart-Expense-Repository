@@ -2,6 +2,7 @@ const transactionModel = require("../models/transaction.model");
 
 const getAllTransactions = async (req, res) => {
   try {
+    const { frequency } = req.body;
     const transactions = await transactionModel.find({
       userid: req.body.userid,
     });
