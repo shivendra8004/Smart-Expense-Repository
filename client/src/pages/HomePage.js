@@ -7,6 +7,7 @@ const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [allTransaction, setAllTransaction] = useState([]);
+  const [frequency, setFrequency] = useState("7");
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -37,23 +38,23 @@ const HomePage = () => {
       title: "Actions",
     },
   ];
-  // Get All Transactions
-  const getAllTransaction = async () => {
-    try {
-      const user = JSON.parse(localStorage.getItem("user"));
-      setLoading(true);
-      const response = await axios.post("/transactions/get-transaction", { userid: user._id });
-      setLoading(false);
-      setAllTransaction(response.data);
-    } catch (error) {
-      console.log(error);
-      message.error("Error in Fetching Transactions from Database");
-    }
-  };
   // GetAllTransaction Hook
   useEffect(() => {
+    // Get All Transactions
+    const getAllTransaction = async () => {
+      try {
+        const user = JSON.parse(localStorage.getItem("user"));
+        setLoading(true);
+        const response = await axios.post("/transactions/get-transaction", { userid: user._id, frequency });
+        setLoading(false);
+        setAllTransaction(response.data);
+      } catch (error) {
+        console.log(error);
+        message.error("Error in Fetching Transactions from Database");
+      }
+    };
     getAllTransaction();
-  }, []);
+  }, [frequency]);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
@@ -73,7 +74,15 @@ const HomePage = () => {
     <Layout>
       {loading && <Spinner />}
       <div className="filters">
-        <div>Range Filters</div>
+        <div>
+          <h6>Filter Transactions</h6>
+          <Select value={frequency} onChange={(value) => setFrequency(value)}>
+            <Select.Option value="7">Last 1 Week</Select.Option>
+            <Select.Option value="30">Last 1 Month</Select.Option>
+            <Select.Option value="365">Last 1 Year</Select.Option>
+            <Select.Option value="custum">Custum</Select.Option>
+          </Select>
+        </div>
         <div>
           <button className="btn btn-primary" onClick={() => setShowModal(true)}>
             Add Transaction
