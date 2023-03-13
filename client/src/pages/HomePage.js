@@ -39,11 +39,11 @@ const HomePage = () => {
     },
   ];
   // Get All Transactions
-  const getAllTransaction = async (frequency) => {
+  const getAllTransaction = async () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
-      const response = await axios.post("/transactions/get-transaction", { userid: user._id, frequency });
+      const response = await axios.post("/transactions/get-transaction", { userid: user._id });
       setLoading(false);
       setAllTransaction(response.data);
     } catch (error) {
@@ -54,7 +54,7 @@ const HomePage = () => {
   // GetAllTransaction Hook
   useEffect(() => {
     getAllTransaction();
-  }, [frequency]);
+  }, []);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
@@ -63,8 +63,8 @@ const HomePage = () => {
       await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
       setLoading(false);
       message.success("Transaction Added Successfully");
-      setShowModal(false);
       getAllTransaction();
+      setShowModal(false);
     } catch (error) {
       setLoading(false);
       message.error("Error in Adding Transaction");
@@ -76,12 +76,12 @@ const HomePage = () => {
       <div className="filters">
         <div>
           <h6>Filter Transactions</h6>
-          <Select value={frequency} onChange={(value) => setFrequency(value)}>
+          {/* <Select value={frequency} onChange={(value) => setFrequency(value)}>
             <Select.Option value="7">Last 1 Week</Select.Option>
             <Select.Option value="30">Last 1 Month</Select.Option>
             <Select.Option value="365">Last 1 Year</Select.Option>
             <Select.Option value="custom">Custom</Select.Option>
-          </Select>
+          </Select> */}
         </div>
         <div>
           <button className="btn btn-primary" onClick={() => setShowModal(true)}>
