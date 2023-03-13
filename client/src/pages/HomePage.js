@@ -93,7 +93,7 @@ const HomePage = () => {
             <Select.Option value="7">Last 1 Week</Select.Option>
             <Select.Option value="30">Last 1 Month</Select.Option>
             <Select.Option value="365">Last 1 Year</Select.Option>
-            <Select.Option value="custum">Custum</Select.Option>
+            <Select.Option value="custom">Custom</Select.Option>
           </Select>
         </div>
         <div>
