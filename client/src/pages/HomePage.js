@@ -38,34 +38,21 @@ const HomePage = () => {
       title: "Actions",
     },
   ];
-  // // Get All Transactions
-  // const getAllTransaction = async (frequency) => {
-  //   try {
-  //     const user = JSON.parse(localStorage.getItem("user"));
-  //     setLoading(true);
-  //     const response = await axios.post("/transactions/get-transaction", { userid: user._id, frequency });
-  //     setLoading(false);
-  //     setAllTransaction(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //     message.error("Error in Fetching Transactions from Database");
-  //   }
-  // };
+  // Get All Transactions
+  const getAllTransaction = async (frequency) => {
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      setLoading(true);
+      const response = await axios.post("/transactions/get-transaction", { userid: user._id, frequency });
+      setLoading(false);
+      setAllTransaction(response.data);
+    } catch (error) {
+      console.log(error);
+      message.error("Error in Fetching Transactions from Database");
+    }
+  };
   // GetAllTransaction Hook
   useEffect(() => {
-    // Get All Transactions
-    const getAllTransaction = async () => {
-      try {
-        const user = JSON.parse(localStorage.getItem("user"));
-        setLoading(true);
-        const response = await axios.post("/transactions/get-transaction", { userid: user._id, frequency });
-        setLoading(false);
-        setAllTransaction(response.data);
-      } catch (error) {
-        console.log(error);
-        message.error("Error in Fetching Transactions from Database");
-      }
-    };
     getAllTransaction();
   }, [frequency]);
   // Handle Submit Function
