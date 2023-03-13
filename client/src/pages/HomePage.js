@@ -7,7 +7,7 @@ const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [allTransaction, setAllTransaction] = useState([]);
-  const [frequency, setFrequency] = useState("7");
+  // const [frequency, setFrequency] = useState("7");
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -52,9 +52,9 @@ const HomePage = () => {
     }
   };
   // GetAllTransaction Hook
-  useEffect(() => {
-    getAllTransaction();
-  }, []);
+  // useEffect(() => {
+  //   getAllTransaction();
+  // }, []);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
