@@ -11,6 +11,7 @@ const HomePage = () => {
   const [allTransaction, setAllTransaction] = useState([]);
   const [frequency, setFrequency] = useState("7");
   const [selectedDate, setSelectedDate] = useState([]);
+  const [type, setType] = useState("All");
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -53,6 +54,7 @@ const HomePage = () => {
           userid: user._id,
           frequency,
           selectedDate,
+          type,
         });
         setLoading(false);
         setAllTransaction(response.data);
@@ -63,7 +65,7 @@ const HomePage = () => {
       }
     };
     getAllTransaction();
-  }, [frequency, selectedDate]);
+  }, [frequency, selectedDate, type]);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
@@ -84,7 +86,9 @@ const HomePage = () => {
       {loading && <Spinner />}
       <div className="filters">
         <div>
-          <h6>Filter Transactions</h6>
+          <h5>Filter Transactions</h5>
+          {/* Filter Transactions By Date */}
+          <h6>Select Date</h6>
           <Select value={frequency} onChange={(values) => setFrequency(values)}>
             <Select.Option value="7">Last 1 Week</Select.Option>
             <Select.Option value="30">Last 1 Month</Select.Option>
@@ -99,6 +103,13 @@ const HomePage = () => {
               }}
             />
           )}
+          {/* Filter Transactions By Type */}
+          <h6>Select Type</h6>
+          <Select value={type} onChange={(values) => setType(values)}>
+            <Select.Option value="income">Income</Select.Option>
+            <Select.Option value="expense">Expense</Select.Option>
+            <Select.Option value="All">All</Select.Option>
+          </Select>
         </div>
         <div>
           <button className="btn btn-primary" onClick={() => setShowModal(true)}>
