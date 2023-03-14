@@ -3,6 +3,7 @@ import { Form, Input, Modal, Select, Table, message, DatePicker } from "antd";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import Spinner from "../components/Spinner";
+import moment from "moment";
 const { RangePicker } = DatePicker;
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,6 +16,7 @@ const HomePage = () => {
     {
       title: "Date",
       dataIndex: "date",
+      render: (text) => <span>{moment(text).format("YYYY-MM-DD")}</span>,
     },
     {
       title: "Amount",
