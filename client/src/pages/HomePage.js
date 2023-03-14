@@ -89,7 +89,7 @@ const HomePage = () => {
             <Select.Option value="365">Last 1 Year</Select.Option>
             <Select.Option value="custom">Custom</Select.Option>
           </Select>
-          {frequency === "custum" && (
+          {frequency === "custom" && (
             <RangePicker
               value={selectedDate}
               onChange={(values) => {
