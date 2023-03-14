@@ -11,7 +11,7 @@ const HomePage = () => {
   const [allTransaction, setAllTransaction] = useState([]);
   const [frequency, setFrequency] = useState("7");
   const [selectedDate, setSelectedDate] = useState([]);
-  const [type, setType] = useState("All");
+  const [type, setType] = useState("all");
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -108,7 +108,7 @@ const HomePage = () => {
           <Select value={type} onChange={(values) => setType(values)}>
             <Select.Option value="income">Income</Select.Option>
             <Select.Option value="expense">Expense</Select.Option>
-            <Select.Option value="All">All</Select.Option>
+            <Select.Option value="all">All</Select.Option>
           </Select>
         </div>
         <div>
