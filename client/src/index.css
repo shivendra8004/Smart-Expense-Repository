@@ -23,9 +23,9 @@
   min-height: 100vh !important;
 }
 .filters {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   padding: 15px;
   box-shadow: 0 0 5px;
 }

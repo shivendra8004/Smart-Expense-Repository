@@ -85,38 +85,40 @@ const HomePage = () => {
     <Layout>
       {loading && <Spinner />}
       <div className="filters ">
-        <h5>Filter Transactions</h5>
-        <div>
-          {/* Filter Transactions By Date */}
-          <h6>Select Date</h6>
-          <Select value={frequency} onChange={(values) => setFrequency(values)}>
-            <Select.Option value="7">Last 1 Week</Select.Option>
-            <Select.Option value="30">Last 1 Month</Select.Option>
-            <Select.Option value="365">Last 1 Year</Select.Option>
-            <Select.Option value="custom">Custom</Select.Option>
-          </Select>
-          {frequency === "custom" && (
-            <RangePicker
-              value={selectedDate}
-              onChange={(values) => {
-                setSelectedDate(values);
-              }}
-            />
-          )}
-        </div>
-        {/* Filter Transactions By Type */}
-        <div>
-          <h6>Select Type</h6>
-          <Select value={type} onChange={(values) => setType(values)}>
-            <Select.Option value="income">Income</Select.Option>
-            <Select.Option value="expense">Expense</Select.Option>
-            <Select.Option value="all">All</Select.Option>
-          </Select>
-        </div>
-        <div>
-          <button className="btn btn-primary" onClick={() => setShowModal(true)}>
-            Add Transaction
-          </button>
+        <h5> Filter Transactions</h5>
+        <div className="d-flex justify-content-between">
+          <div>
+            {/* Filter Transactions By Date */}
+            <h6>Select Date</h6>
+            <Select value={frequency} onChange={(values) => setFrequency(values)}>
+              <Select.Option value="7">Last 1 Week</Select.Option>
+              <Select.Option value="30">Last 1 Month</Select.Option>
+              <Select.Option value="365">Last 1 Year</Select.Option>
+              <Select.Option value="custom">Custom</Select.Option>
+            </Select>
+            {frequency === "custom" && (
+              <RangePicker
+                value={selectedDate}
+                onChange={(values) => {
+                  setSelectedDate(values);
+                }}
+              />
+            )}
+          </div>
+          {/* Filter Transactions By Type */}
+          <div>
+            <h6>Select Type</h6>
+            <Select value={type} onChange={(values) => setType(values)}>
+              <Select.Option value="income">Income</Select.Option>
+              <Select.Option value="expense">Expense</Select.Option>
+              <Select.Option value="all">All</Select.Option>
+            </Select>
+          </div>
+          <div>
+            <button className="btn btn-primary" onClick={() => setShowModal(true)}>
+              Add Transaction
+            </button>
+          </div>
         </div>
       </div>
       <div className="content">
