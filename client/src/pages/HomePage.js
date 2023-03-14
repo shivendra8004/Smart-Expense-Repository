@@ -56,8 +56,9 @@ const HomePage = () => {
         });
         setLoading(false);
         setAllTransaction(response.data);
+        console.log(response.data);
       } catch (error) {
-        setLoading(false);
+        // setLoading(false);
         console.log(error);
         message.error("Error in Fetching Transactions from Database");
       }
