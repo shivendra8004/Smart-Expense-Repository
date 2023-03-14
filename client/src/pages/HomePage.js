@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Form, Input, Modal, Select, Table, message } from "antd";
+import { Form, Input, Modal, Select, Table, message, DatePicker } from "antd";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import Spinner from "../components/Spinner";
+const { RangePicker } = DatePicker;
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [allTransaction, setAllTransaction] = useState([]);
   const [frequency, setFrequency] = useState("7");
+  const [selectedDate, setSelectedDate] = useState([]);
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -48,6 +50,7 @@ const HomePage = () => {
         const response = await axios.post("/transactions/get-transaction", {
           userid: user._id,
           frequency,
+          selectedDate,
         });
         setLoading(false);
         setAllTransaction(response.data);
@@ -57,7 +60,7 @@ const HomePage = () => {
       }
     };
     getAllTransaction();
-  }, [frequency]);
+  }, [frequency, selectedDate]);
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
@@ -84,6 +87,14 @@ const HomePage = () => {
             <Select.Option value="365">Last 1 Year</Select.Option>
             <Select.Option value="custom">Custom</Select.Option>
           </Select>
+          {frequency === "custum" && (
+            <RangePicker
+              value={selectedDate}
+              onChange={(values) => {
+                setSelectedDate(values);
+              }}
+            />
+          )}
         </div>
         <div>
           <button className="btn btn-primary" onClick={() => setShowModal(true)}>
