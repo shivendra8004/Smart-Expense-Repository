@@ -84,9 +84,9 @@ const HomePage = () => {
   return (
     <Layout>
       {loading && <Spinner />}
-      <div className="filters">
+      <div className="filters ">
+        <h5>Filter Transactions</h5>
         <div>
-          <h5>Filter Transactions</h5>
           {/* Filter Transactions By Date */}
           <h6>Select Date</h6>
           <Select value={frequency} onChange={(values) => setFrequency(values)}>
@@ -103,7 +103,9 @@ const HomePage = () => {
               }}
             />
           )}
-          {/* Filter Transactions By Type */}
+        </div>
+        {/* Filter Transactions By Type */}
+        <div>
           <h6>Select Type</h6>
           <Select value={type} onChange={(values) => setType(values)}>
             <Select.Option value="income">Income</Select.Option>
