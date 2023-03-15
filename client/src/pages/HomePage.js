@@ -4,6 +4,7 @@ import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import moment from "moment";
+import { UnorderedListOutlined, AreaChartOutlined } from "@ant-design/icons";
 const { RangePicker } = DatePicker;
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -113,6 +114,10 @@ const HomePage = () => {
               <Select.Option value="expense">Expense</Select.Option>
               <Select.Option value="all">All</Select.Option>
             </Select>
+          </div>
+          <div className="mx-2">
+            <UnorderedListOutlined className="mx-2" />
+            <AreaChartOutlined className="mx-2" />
           </div>
           <div>
             <button className="btn btn-primary" onClick={() => setShowModal(true)}>
