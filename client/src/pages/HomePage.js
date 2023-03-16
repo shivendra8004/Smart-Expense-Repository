@@ -92,7 +92,7 @@ const HomePage = () => {
           <div className="d-flex align-items-center">
             {/* Filter Transactions By Date */}
             <h6 className="mx-2">Select Date</h6>
-            <Select value={frequency} onChange={(values) => setFrequency(values)}>
+            <Select style={{ width: "130px" }} value={frequency} onChange={(values) => setFrequency(values)}>
               <Select.Option value="7">Last 1 Week</Select.Option>
               <Select.Option value="30">Last 1 Month</Select.Option>
               <Select.Option value="365">Last 1 Year</Select.Option>
@@ -110,15 +110,21 @@ const HomePage = () => {
           {/* Filter Transactions By Type */}
           <div className="d-flex align-items-center">
             <h6 className="mx-2">Select Type</h6>
-            <Select value={type} onChange={(values) => setType(values)}>
+            <Select style={{ width: "90px" }} value={type} onChange={(values) => setType(values)}>
               <Select.Option value="income">Income</Select.Option>
               <Select.Option value="expense">Expense</Select.Option>
               <Select.Option value="all">All</Select.Option>
             </Select>
           </div>
           <div className="switch-icons d-flex align-items-center">
-            <UnorderedListOutlined className="mx-2" onClick={() => setViewData("table")} />
-            <AreaChartOutlined className="mx-2 active-icon" onClick={() => setViewData("analytics")} />
+            <UnorderedListOutlined
+              className={`mx-2 ${viewData === "table" ? "active-icon" : "inactive-icon"}`}
+              onClick={() => setViewData("table")}
+            />
+            <AreaChartOutlined
+              className={`mx-2 ${viewData === "analytics" ? "active-icon" : "inactive-icon"}`}
+              onClick={() => setViewData("analytics")}
+            />
           </div>
           <div>
             <button className="btn btn-primary " onClick={() => setShowModal(true)}>
