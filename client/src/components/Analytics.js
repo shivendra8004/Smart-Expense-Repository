@@ -1,6 +1,6 @@
 import React from "react";
 
-const Analytics = () => {
+const Analytics = ({ allTransaction }) => {
   return (
     <div>
       <h1>Analytics</h1>

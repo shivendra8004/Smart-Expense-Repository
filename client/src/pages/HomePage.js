@@ -5,6 +5,7 @@ import axios from "axios";
 import Spinner from "../components/Spinner";
 import moment from "moment";
 import { UnorderedListOutlined, AreaChartOutlined } from "@ant-design/icons";
+import Analytics from "../components/Analytics";
 const { RangePicker } = DatePicker;
 const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -134,7 +135,11 @@ const HomePage = () => {
         </div>
       </div>
       <div className="content">
-        <Table columns={columns} dataSource={allTransaction} />
+        {viewData === "table" ? (
+          <Table columns={columns} dataSource={allTransaction} />
+        ) : (
+          <Analytics allTransaction={allTransaction} />
+        )}
       </div>
       <Modal title="Add Transaction" open={showModal} onCancel={() => setShowModal(false)} footer={false}>
         <Form layout="verticle" onFinish={HandleSubmit}>
