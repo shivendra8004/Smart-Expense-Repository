@@ -116,7 +116,7 @@ const HomePage = () => {
               <Select.Option value="all">All</Select.Option>
             </Select>
           </div>
-          <div className="mx-2">
+          <div className="switch-icons d-flex align-items-center">
             <UnorderedListOutlined className="mx-2" onClick={() => setViewData("table")} />
             <AreaChartOutlined className="mx-2 active-icon" onClick={() => setViewData("analytics")} />
           </div>

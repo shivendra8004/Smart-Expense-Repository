@@ -41,3 +41,9 @@
 .inactive-icon {
   color: gray;
 }
+.switch-icons {
+  box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 0;
+  height: 40px;
+}
