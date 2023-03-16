@@ -8,7 +8,7 @@ const Analytics = ({ allTransaction }) => {
   const totalExpensePercentage = (totalExpenseTransaction / totalTransaction) * 100;
   return (
     <div>
-      <div className="row">
+      <div className="row m-3">
         <div className="col-md-4">
           <div className="card">
             <div className="card-header">Total Transactions : {totalTransaction}</div>
