@@ -88,10 +88,10 @@ const HomePage = () => {
       {loading && <Spinner />}
       <div className="filters ">
         <h5> Filter Transactions</h5>
-        <div className="d-flex justify-content-between">
-          <div>
+        <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex align-items-center">
             {/* Filter Transactions By Date */}
-            <h6>Select Date</h6>
+            <h6 className="mx-2">Select Date</h6>
             <Select value={frequency} onChange={(values) => setFrequency(values)}>
               <Select.Option value="7">Last 1 Week</Select.Option>
               <Select.Option value="30">Last 1 Month</Select.Option>
@@ -108,8 +108,8 @@ const HomePage = () => {
             )}
           </div>
           {/* Filter Transactions By Type */}
-          <div>
-            <h6>Select Type</h6>
+          <div className="d-flex align-items-center">
+            <h6 className="mx-2">Select Type</h6>
             <Select value={type} onChange={(values) => setType(values)}>
               <Select.Option value="income">Income</Select.Option>
               <Select.Option value="expense">Expense</Select.Option>
@@ -121,7 +121,7 @@ const HomePage = () => {
             <AreaChartOutlined className="mx-2 active-icon" onClick={() => setViewData("analytics")} />
           </div>
           <div>
-            <button className="btn btn-primary" onClick={() => setShowModal(true)}>
+            <button className="btn btn-primary " onClick={() => setShowModal(true)}>
               Add Transaction
             </button>
           </div>

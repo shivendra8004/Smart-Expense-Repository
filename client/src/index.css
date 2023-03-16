@@ -42,8 +42,12 @@
   color: gray;
 }
 .switch-icons {
-  box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.3);
+  border: 1px solid rgb(0, 0, 0, 0.15);
   border-radius: 6px;
   padding: 0;
-  height: 40px;
+  height: 32px;
+}
+.btn {
+  height: 33px !important;
+  padding: 0 12px !important;
 }
