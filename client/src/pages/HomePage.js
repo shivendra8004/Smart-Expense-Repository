@@ -118,7 +118,7 @@ const HomePage = () => {
           </div>
           <div className="mx-2">
             <UnorderedListOutlined className="mx-2" onClick={() => setViewData("table")} />
-            <AreaChartOutlined className="mx-2" onClick={() => setViewData("analytics")} />
+            <AreaChartOutlined className="mx-2 active-icon" onClick={() => setViewData("analytics")} />
           </div>
           <div>
             <button className="btn btn-primary" onClick={() => setShowModal(true)}>
