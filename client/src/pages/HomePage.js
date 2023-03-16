@@ -13,6 +13,7 @@ const HomePage = () => {
   const [frequency, setFrequency] = useState("7");
   const [selectedDate, setSelectedDate] = useState([]);
   const [type, setType] = useState("all");
+  const [viewData, setViewData] = useState("table");
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -116,8 +117,8 @@ const HomePage = () => {
             </Select>
           </div>
           <div className="mx-2">
-            <UnorderedListOutlined className="mx-2" />
-            <AreaChartOutlined className="mx-2" />
+            <UnorderedListOutlined className="mx-2" onClick={() => setViewData("table")} />
+            <AreaChartOutlined className="mx-2" onClick={() => setViewData("analytics")} />
           </div>
           <div>
             <button className="btn btn-primary" onClick={() => setShowModal(true)}>

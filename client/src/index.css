@@ -29,3 +29,8 @@
   padding: 15px;
   box-shadow: 0 0 5px;
 }
+/* Antd icons */
+.anticon svg {
+  font-size: 20px;
+  cursor: pointer;
+}
