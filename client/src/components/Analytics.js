@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Progress } from "antd";
 const Analytics = ({ allTransaction }) => {
   const totalTransaction = allTransaction.length;
   const totalIncomeTransaction = allTransaction.filter((transaction) => transaction.type === "income");
@@ -15,6 +15,14 @@ const Analytics = ({ allTransaction }) => {
             <div className="card-body">
               <h5>Total Income : {totalIncomeTransaction.length}</h5>
               <h5>Total Expense : {totalExpenseTransaction.length}</h5>
+              <div>
+                <Progress
+                  type="circle"
+                  strokeColor={"green"}
+                  className="mx-2"
+                  percent={totalIncomePercentage.toFixed(0)}
+                />
+              </div>
             </div>
           </div>
         </div>
