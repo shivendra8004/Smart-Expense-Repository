@@ -14,7 +14,7 @@ const HomePage = () => {
   const [frequency, setFrequency] = useState("7");
   const [selectedDate, setSelectedDate] = useState([]);
   const [type, setType] = useState("all");
-  const [viewData, setViewData] = useState("table");
+  const [viewData, setViewData] = useState("analytics");
   // Creating Table formate to display all transactions
   const columns = [
     {
