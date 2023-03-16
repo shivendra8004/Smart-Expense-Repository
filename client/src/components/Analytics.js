@@ -12,16 +12,18 @@ const Analytics = ({ allTransaction }) => {
         <div className="col-md-4">
           <div className="card">
             <div className="card-header">Total Transactions : {totalTransaction}</div>
-            <div className="card-body">
-              <h5>Total Income : {totalIncomeTransaction.length}</h5>
-              <h5>Total Expense : {totalExpenseTransaction.length}</h5>
-              <div className="d-flex">
+            <div className="card-body ">
+              <div className="d-flex justify-content-around">
+                <h5 className="text-success mx-2">Total Income : {totalIncomeTransaction.length}</h5>
+                <h5 className="text-danger">Total Expense : {totalExpenseTransaction.length}</h5>
+              </div>
+              <div className="d-flex justify-content-around">
                 <div>
                   <Progress
                     type="circle"
                     strokeColor={"green"}
                     className="mx-2"
-                    percent={totalIncomePercentage.toFixed(0)}
+                    percent={totalIncomePercentage.toFixed(1)}
                   />
                 </div>
                 <div>
@@ -29,7 +31,7 @@ const Analytics = ({ allTransaction }) => {
                     type="circle"
                     strokeColor={"red"}
                     className="mx-2"
-                    percent={totalExpensePercentage.toFixed(0)}
+                    percent={totalExpensePercentage.toFixed(1)}
                   />
                 </div>
               </div>
