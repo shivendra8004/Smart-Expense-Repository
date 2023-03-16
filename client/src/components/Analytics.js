@@ -51,11 +51,11 @@ const Analytics = ({ allTransaction }) => {
         </div>
         <div className="col-md-4">
           <div className="card">
-            <div className="card-header">Total Transactions : {totalTransaction}</div>
+            <div className="card-header">Total Turnover : {totalTurnover}</div>
             <div className="card-body ">
               <div className="d-flex justify-content-around">
-                <h5 className="text-success mx-2">Total Income : {totalIncomeTransaction.length}</h5>
-                <h5 className="text-danger">Total Expense : {totalExpenseTransaction.length}</h5>
+                <h5 className="text-success mx-2">Income: {totalIncomeTurnover}</h5>
+                <h5 className="text-danger">Expense: {totalExpenseTurnover}</h5>
               </div>
               <div className="d-flex justify-content-around">
                 <div>
@@ -63,7 +63,7 @@ const Analytics = ({ allTransaction }) => {
                     type="circle"
                     strokeColor={"green"}
                     className="mx-2"
-                    percent={totalIncomePercentage.toFixed(1)}
+                    percent={totalIncomeTurnoverPercentage.toFixed(1)}
                   />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ const Analytics = ({ allTransaction }) => {
                     type="circle"
                     strokeColor={"red"}
                     className="mx-2"
-                    percent={totalExpensePercentage.toFixed(1)}
+                    percent={totalExpenseTurnoverPercentage.toFixed(1)}
                   />
                 </div>
               </div>
