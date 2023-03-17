@@ -95,7 +95,12 @@ const Analytics = ({ allTransaction }) => {
       </div>
       <div className="row mt-3">
         <div className="col-md-5">
-          <h4>Category</h4>
+          <h4>Category Wise Income</h4>
+          {categories.map((category) => {
+            const amount = allTransaction
+              .filter((transaction) => transaction.type === "income" && transaction.category === category)
+              .reduce((acc, transaction) => acc + transaction.amount, 0);
+          })}
         </div>
       </div>
     </div>
