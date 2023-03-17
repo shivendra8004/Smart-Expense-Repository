@@ -1,6 +1,20 @@
 import React from "react";
 import { Progress } from "antd";
 const Analytics = ({ allTransaction }) => {
+  // All categories
+  const categories = [
+    "salary",
+    "tip",
+    "freelance",
+    "other-income",
+    "grocery",
+    "travel",
+    "medical",
+    "food",
+    "fee",
+    "tax",
+    "other",
+  ];
   // Total Transactions
   const totalTransaction = allTransaction.length;
   const totalIncomeTransaction = allTransaction.filter((transaction) => transaction.type === "income");
