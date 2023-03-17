@@ -100,6 +100,11 @@ const Analytics = ({ allTransaction }) => {
             const amount = allTransaction
               .filter((transaction) => transaction.type === "income" && transaction.category === category)
               .reduce((acc, transaction) => acc + transaction.amount, 0);
+            return (
+              <div className="card">
+                <div className="card-body"></div>
+              </div>
+            );
           })}
         </div>
       </div>
