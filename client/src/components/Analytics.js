@@ -102,7 +102,9 @@ const Analytics = ({ allTransaction }) => {
               .reduce((acc, transaction) => acc + transaction.amount, 0);
             return (
               <div className="card">
-                <div className="card-body"></div>
+                <div className="card-body">
+                  <h5>{categories}</h5>
+                </div>
               </div>
             );
           })}
