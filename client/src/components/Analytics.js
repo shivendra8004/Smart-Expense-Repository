@@ -93,6 +93,11 @@ const Analytics = ({ allTransaction }) => {
           </div>
         </div>
       </div>
+      <div className="row mt-3">
+        <div className="col-md-5">
+          <h4>Category</h4>
+        </div>
+      </div>
     </div>
   );
 };
