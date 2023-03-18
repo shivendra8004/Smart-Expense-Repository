@@ -101,12 +101,14 @@ const Analytics = ({ allTransaction }) => {
               .filter((transaction) => transaction.type === "income" && transaction.category === category)
               .reduce((acc, transaction) => acc + transaction.amount, 0);
             return (
-              <div className="card">
-                <div className="card-body">
-                  <h5>{categories}</h5>
-                  <Progress percent={(amount / totalIncomeTurnover) * 100} />
+              amount > 0 && (
+                <div className="card">
+                  <div className="card-body">
+                    <h5>{categories}</h5>
+                    <Progress percent={((amount / totalIncomeTurnover) * 100).toFixed(1)} />
+                  </div>
                 </div>
-              </div>
+              )
             );
           })}
         </div>
