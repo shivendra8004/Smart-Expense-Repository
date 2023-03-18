@@ -86,9 +86,18 @@ const HomePage = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
-      await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
-      setLoading(false);
-      message.success("Transaction Added Successfully");
+      if (editable) {
+        await axios.post("/transactions/edit-transaction", {
+          payLoad: { ...values, userid: user._id },
+          transactionId: editable._id,
+        });
+        setLoading(false);
+        message.success("Transaction Updated Successfully");
+      } else {
+        await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
+        setLoading(false);
+        message.success("Transaction Added Successfully");
+      }
       setShowModal(false);
       setEditable(null);
     } catch (error) {
