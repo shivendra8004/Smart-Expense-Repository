@@ -53,7 +53,7 @@ const HomePage = () => {
               setShowModal(true);
             }}
           />
-          <DeleteOutlined className="mx-2" />
+          <DeleteOutlined className="mx-2" onClick={deleteTransaction} />
         </div>
       ),
     },
@@ -81,6 +81,20 @@ const HomePage = () => {
     };
     getAllTransaction();
   }, [frequency, selectedDate, type]);
+  // Deleted Transaction Function
+  const deleteTransaction = () => {
+    try {
+      setLoading(true);
+      await axios.post("/transactions/delete-transaction",{
+        transactionId:tra
+      })
+    } catch (error) {
+      setLoading(false);
+      message.error("Failed to delete Transaction");
+      console.log(error);
+    }
+  };
+
   // Handle Submit Function
   const HandleSubmit = async (values) => {
     try {
