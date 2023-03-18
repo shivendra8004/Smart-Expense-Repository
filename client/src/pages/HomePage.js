@@ -53,7 +53,12 @@ const HomePage = () => {
               setShowModal(true);
             }}
           />
-          <DeleteOutlined className="mx-2" onClick={deleteTransaction} />
+          <DeleteOutlined
+            className="mx-2"
+            onClick={() => {
+              deleteTransaction();
+            }}
+          />
         </div>
       ),
     },
@@ -82,12 +87,12 @@ const HomePage = () => {
     getAllTransaction();
   }, [frequency, selectedDate, type]);
   // Deleted Transaction Function
-  const deleteTransaction = () => {
+  const deleteTransaction = async () => {
     try {
       setLoading(true);
-      await axios.post("/transactions/delete-transaction",{
-        transactionId:tra
-      })
+      await axios.post("/transactions/delete-transaction", {
+        transactionId: ,
+      });
     } catch (error) {
       setLoading(false);
       message.error("Failed to delete Transaction");
