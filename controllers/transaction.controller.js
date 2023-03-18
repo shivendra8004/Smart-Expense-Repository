@@ -42,9 +42,17 @@ const editTransactions = async (req, res) => {
     res.status(500).json(error);
   }
 };
+const deleteTransactions = async (req, res) => {
+  try {
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
 
 module.exports = {
   getAllTransactions,
   addTransactions,
   editTransactions,
+  deleteTransactions,
 };
