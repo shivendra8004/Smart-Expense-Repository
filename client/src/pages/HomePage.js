@@ -93,6 +93,8 @@ const HomePage = () => {
       await axios.post("/transactions/delete-transaction", {
         transactionId: ,
       });
+      setLoading(false)
+      message.success("Transaction deleted successfully");
     } catch (error) {
       setLoading(false);
       message.error("Failed to delete Transaction");
