@@ -47,7 +47,7 @@ const HomePage = () => {
       render: (text, record) => (
         <div>
           <EditOutlined />
-          <DeleteOutlined />
+          <DeleteOutlined className="mx-2" />
         </div>
       ),
     },
