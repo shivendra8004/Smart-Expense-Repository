@@ -56,7 +56,7 @@ const HomePage = () => {
           <DeleteOutlined
             className="mx-2"
             onClick={() => {
-              deleteTransaction();
+              deleteTransaction(record);
             }}
           />
         </div>
@@ -87,13 +87,13 @@ const HomePage = () => {
     getAllTransaction();
   }, [frequency, selectedDate, type]);
   // Deleted Transaction Function
-  const deleteTransaction = async () => {
+  const deleteTransaction = async (record) => {
     try {
       setLoading(true);
       await axios.post("/transactions/delete-transaction", {
-        transactionId: ,
+        transactionId: record._id,
       });
-      setLoading(false)
+      setLoading(false);
       message.success("Transaction deleted successfully");
     } catch (error) {
       setLoading(false);
