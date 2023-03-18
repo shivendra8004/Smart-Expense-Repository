@@ -33,8 +33,13 @@ const addTransactions = async (req, res) => {
     res.status(500).json(error);
   }
 };
+const editTransactions = async (req, res) => {
+  try {
+  } catch (error) {}
+};
 
 module.exports = {
   getAllTransactions,
   addTransactions,
+  editTransactions,
 };
