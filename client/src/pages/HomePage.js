@@ -15,6 +15,7 @@ const HomePage = () => {
   const [selectedDate, setSelectedDate] = useState([]);
   const [type, setType] = useState("all");
   const [viewData, setViewData] = useState("analytics");
+  const [editable, setEditable] = useState(null);
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -46,7 +47,12 @@ const HomePage = () => {
       title: "Actions",
       render: (text, record) => (
         <div>
-          <EditOutlined />
+          <EditOutlined
+            onClick={() => {
+              setEditable(record);
+              setShowModal(true);
+            }}
+          />
           <DeleteOutlined className="mx-2" />
         </div>
       ),
