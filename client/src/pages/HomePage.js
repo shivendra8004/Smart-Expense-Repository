@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import moment from "moment";
-import { UnorderedListOutlined, AreaChartOutlined } from "@ant-design/icons";
+import { UnorderedListOutlined, AreaChartOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import Analytics from "../components/Analytics";
 const { RangePicker } = DatePicker;
 const HomePage = () => {
@@ -44,6 +44,12 @@ const HomePage = () => {
     },
     {
       title: "Actions",
+      render: (text, record) => (
+        <div>
+          <EditOutlined />
+          <DeleteOutlined />
+        </div>
+      ),
     },
   ];
   // GetAllTransaction Hook
