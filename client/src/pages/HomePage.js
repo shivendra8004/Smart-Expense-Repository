@@ -136,7 +136,7 @@ const HomePage = () => {
       </div>
       <div className="content">
         {viewData === "table" ? (
-          <Table columns={columns} dataSource={allTransaction} />
+          <Table className="mt-3" columns={columns} dataSource={allTransaction} />
         ) : (
           <Analytics allTransaction={allTransaction} />
         )}
