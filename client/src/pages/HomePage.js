@@ -14,7 +14,7 @@ const HomePage = () => {
   const [frequency, setFrequency] = useState("7");
   const [selectedDate, setSelectedDate] = useState([]);
   const [type, setType] = useState("all");
-  const [viewData, setViewData] = useState("analytics");
+  const [viewData, setViewData] = useState("table");
   const [editable, setEditable] = useState(null);
   // Creating Table formate to display all transactions
   const columns = [
@@ -90,6 +90,7 @@ const HomePage = () => {
       setLoading(false);
       message.success("Transaction Added Successfully");
       setShowModal(false);
+      setEditable(null);
     } catch (error) {
       setLoading(false);
       message.error("Error in Adding Transaction");
@@ -153,8 +154,13 @@ const HomePage = () => {
           <Analytics allTransaction={allTransaction} />
         )}
       </div>
-      <Modal title="Add Transaction" open={showModal} onCancel={() => setShowModal(false)} footer={false}>
-        <Form layout="verticle" onFinish={HandleSubmit}>
+      <Modal
+        title={editable ? "Edit Transaction" : " Add Transaction"}
+        open={showModal}
+        onCancel={() => setShowModal(false)}
+        footer={false}
+      >
+        <Form layout="verticle" onFinish={HandleSubmit} initialValues={editable}>
           <Form.Item label="Amount" name="amount">
             <Input type="text" />
           </Form.Item>
