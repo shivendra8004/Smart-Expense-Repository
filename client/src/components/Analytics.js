@@ -113,17 +113,17 @@ const Analytics = ({ allTransaction }) => {
           })}
         </div>
         <div className="col-md-4">
-          <h4>Category Wise Income</h4>
+          <h4>Category Wise Expense</h4>
           {categories.map((category) => {
             const amount = allTransaction
-              .filter((transaction) => transaction.type === "income" && transaction.category === category)
+              .filter((transaction) => transaction.type === "expense" && transaction.category === category)
               .reduce((acc, transaction) => acc + transaction.amount, 0);
             return (
               amount > 0 && (
                 <div className="card">
                   <div className="card-body">
                     <h5>{category.charAt(0).toUpperCase() + category.slice(1, category.length)}</h5>
-                    <Progress percent={((amount / totalIncomeTurnover) * 100).toFixed(1)} />
+                    <Progress percent={((amount / totalExpenseTurnover) * 100).toFixed(1)} />
                   </div>
                 </div>
               )
