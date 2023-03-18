@@ -35,7 +35,12 @@ const addTransactions = async (req, res) => {
 };
 const editTransactions = async (req, res) => {
   try {
-  } catch (error) {}
+    await transactionModel.findOneAndUpdate({ _id: req.body.transactionId }, req.body.payLoad);
+    res.status(200).send("Edit Successfully");
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
 };
 
 module.exports = {
