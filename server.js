@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 const connectDB = require("./config/connectDB");
 const mainRouter = require("./routes/main.route");
+const path = require("path");
 // Database Connecting
 connectDB();
 // Configuring env file
@@ -16,11 +17,13 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 // Routes and Middlewares
-app.get("/", (req, res) => {
-  res.send("Working Properly");
-});
 app.use("/api/v1", mainRouter);
 
+// Static Files
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function () {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 // Port Variable
 const PORT = 5500 || process.env.PORT;
 // Listening
