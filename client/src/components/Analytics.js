@@ -104,6 +104,7 @@ const Analytics = ({ allTransaction }) => {
               <div className="card">
                 <div className="card-body">
                   <h5>{categories}</h5>
+                  <Progress percent={(amount / totalIncomeTurnover) * 100} />
                 </div>
               </div>
             );
