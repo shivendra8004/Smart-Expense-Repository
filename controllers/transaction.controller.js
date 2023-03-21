@@ -1,5 +1,7 @@
 const transactionModel = require("../models/transaction.model");
 const moment = require("moment");
+
+// Fetching All Transaction of Logined User from database
 const getAllTransactions = async (req, res) => {
   try {
     const { frequency, selectedDate, type } = req.body;
@@ -24,6 +26,8 @@ const getAllTransactions = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+// Adding single Transaction in Logined user account
 const addTransactions = async (req, res) => {
   try {
     const newTransaction = new transactionModel(req.body);
@@ -33,6 +37,8 @@ const addTransactions = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+// Edit Transaction of logined user
 const editTransactions = async (req, res) => {
   try {
     await transactionModel.findOneAndUpdate({ _id: req.body.transactionId }, req.body.payLoad);
@@ -42,6 +48,8 @@ const editTransactions = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+// Delete Single Transaction of Logined User
 const deleteTransactions = async (req, res) => {
   try {
     await transactionModel.findOneAndDelete({ _id: req.body.transactionId });

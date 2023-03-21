@@ -86,6 +86,7 @@ const HomePage = () => {
     };
     getAllTransaction();
   }, [frequency, selectedDate, type]);
+
   // Deleted Transaction Function
   const deleteTransaction = async (record) => {
     try {
