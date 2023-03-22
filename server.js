@@ -19,11 +19,11 @@ app.use(express.json());
 // Routes and Middlewares
 app.use("/api/v1", mainRouter);
 
-// Static Files
-app.use(express.static(path.join(__dirname, "./client/build")));
-app.get("*", function () {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// // Static Files
+// app.use(express.static(path.join(__dirname, "./client/build")));
+// app.get("*", function () {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 // Port Variable
 const PORT = 5500 || process.env.PORT;
 // Listening
