@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = async (values) => {
     try {
       setLoading(true);
-      await axios.post("/api/v1/users/register", values);
+      await axios.post("/users/register", values);
       message.success("Successfully Registered");
       setLoading(false);
       navigate("/login");
