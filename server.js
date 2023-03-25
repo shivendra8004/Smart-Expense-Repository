@@ -19,7 +19,6 @@ app.use(express.json());
 // Routes and Middlewares
 app.use("/api/v1", mainRouter);
 
-// Testing Code
 // // Static Files
 // app.use(express.static(path.join(__dirname, "./client/build")));
 // app.get("*", function () {
