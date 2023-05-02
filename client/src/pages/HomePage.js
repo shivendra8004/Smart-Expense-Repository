@@ -16,6 +16,7 @@ const HomePage = () => {
   const [type, setType] = useState("all");
   const [viewData, setViewData] = useState("table");
   const [editable, setEditable] = useState(null);
+  const [num, setNum] = useState("1");
   // Creating Table formate to display all transactions
   const columns = [
     {
@@ -63,6 +64,32 @@ const HomePage = () => {
       ),
     },
   ];
+  // Handle Submit Function
+  const HandleSubmit = async (values) => {
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      setLoading(true);
+      if (editable) {
+        await axios.post("/transactions/edit-transaction", {
+          payLoad: { ...values, userid: user._id },
+          transactionId: editable._id,
+        });
+        setLoading(false);
+        message.success("Transaction Updated Successfully");
+      } else {
+        await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
+        setLoading(false);
+        message.success("Transaction Added Successfully");
+      }
+      setNum(num + 1);
+      setShowModal(false);
+      setEditable(null);
+    } catch (error) {
+      setLoading(false);
+      message.error("Error in Adding Transaction");
+      console.log(error);
+    }
+  };
   // GetAllTransaction Hook
   useEffect(() => {
     // Get All Transactions
@@ -85,7 +112,8 @@ const HomePage = () => {
       }
     };
     getAllTransaction();
-  }, [frequency, selectedDate, type]);
+  }, [frequency, selectedDate, type, num]);
+  //
 
   // Deleted Transaction Function
   const deleteTransaction = async (record) => {
@@ -99,32 +127,6 @@ const HomePage = () => {
     } catch (error) {
       setLoading(false);
       message.error("Failed to delete Transaction");
-      console.log(error);
-    }
-  };
-
-  // Handle Submit Function
-  const HandleSubmit = async (values) => {
-    try {
-      const user = JSON.parse(localStorage.getItem("user"));
-      setLoading(true);
-      if (editable) {
-        await axios.post("/transactions/edit-transaction", {
-          payLoad: { ...values, userid: user._id },
-          transactionId: editable._id,
-        });
-        setLoading(false);
-        message.success("Transaction Updated Successfully");
-      } else {
-        await axios.post("/transactions/add-transaction", { ...values, userid: user._id });
-        setLoading(false);
-        message.success("Transaction Added Successfully");
-      }
-      setShowModal(false);
-      setEditable(null);
-    } catch (error) {
-      setLoading(false);
-      message.error("Error in Adding Transaction");
       console.log(error);
     }
   };
