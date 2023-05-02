@@ -5,14 +5,6 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/connectDB");
 const mainRouter = require("./routes/main.route");
 const path = require("path");
-// Port No.
-const PORT = 5500 || process.env.PORT;
-// Database Connecting
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server Started Listening on Port ${PORT}`.bgCyan);
-  });
-});
 
 // Configuring env file
 dotenv.config();
@@ -24,3 +16,11 @@ app.use(morgan("dev"));
 app.use(express.json());
 // Routes and Middlewares
 app.use("/api/v1", mainRouter);
+// Port No.
+const PORT = 5500 || process.env.PORT;
+// Database Connection
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server Started Listening on Port ${PORT}`.bgCyan);
+  });
+});
