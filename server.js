@@ -5,7 +5,8 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/connectDB");
 const mainRouter = require("./routes/main.route");
 const path = require("path");
-
+// Database Connection
+connectDB();
 // Configuring env file
 dotenv.config();
 // Rest Object
@@ -18,9 +19,7 @@ app.use(express.json());
 app.use("/api/v1", mainRouter);
 // Port No.
 const PORT = 5500 || process.env.PORT;
-// Database Connection
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server Started Listening on Port ${PORT}`.bgCyan);
-  });
+
+app.listen(PORT, () => {
+  console.log(`Server Started Listening on Port ${PORT}`.bgCyan);
 });
