@@ -2,6 +2,9 @@ import { useRef, useState } from "react";
 import logo from "../../assets/smartExpenseLogo.svg";
 import landing from "../../assets/landing.png";
 import contact from "../../assets/contact.png";
+import shiv from "../../assets/shiv.jpg";
+import jyoti from "../../assets/jyoti.jpg";
+import saksham from "../../assets/Cutyyyyy.png";
 import { Link } from "react-router-dom";
 import "./landingPage.css";
 const LandingPage = () => {
@@ -176,7 +179,7 @@ const LandingPage = () => {
                 </div>
                 <div className="row h-90">
                     <div className=" col-12 col-sm-6 d-flex align-items-center">
-                        <div className="w-50 h-75  m-auto">
+                        <div className="w-75 w-sm-50 h-75  m-auto">
                             <label htmlFor="name" className="form-label m-0 fs-6">
                                 Full Name
                             </label>
@@ -194,11 +197,11 @@ const LandingPage = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="col-12 col-sm-6">
-                        <div className="h-75 w-75 text-center">
+                    <div className="col-12 col-sm-6 d-flex d-sm-block justify-content-center">
+                        <div className="d-none d-sm-block h-75 w-75 text-center">
                             <img className="contact-img " src={contact} alt="contact us" />
                         </div>
-                        <div className="d-flex justify-content-evenly h-25 w-75">
+                        <div className="d-flex justify-content-evenly h-25 w-75 pt-5 pt-sm-0">
                             <Link to="https://wa.me/7828278004?text=Hey%20Shivendra%2C%20Lets%20have%20a%20chat" target="_blank">
                                 <div>
                                     <i className="bi bi-whatsapp fs-1 text-success border border-success border-2 p-2 ps-3 pe-3 rounded"></i>
@@ -217,9 +220,47 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
+                <div className="row container-heading ">
+                    <div className="col ">
+                        <Link className="link" onClick={() => scrollToAbout.current.scrollIntoView()}>
+                            <div className="d-flex justify-content-center">
+                                <i className="bi bi-mouse fs-3"></i>
+                            </div>
+                            <div className="fs-5 d-flex justify-content-center">Scroll</div>
+                        </Link>
+                    </div>
+                </div>
             </div>
             <div className="container text-light" ref={scrollToAbout} id="about">
-                <h1>About</h1>
+                <div className="row container-heading">
+                    <div className="col fs-1 d-flex justify-content-center">Our Team</div>
+                </div>
+                <div className="row h-75">
+                    <div className="col-12 col-sm-4 d-flex justify-content-center align-items-center ">
+                        <div className="text-center fs-4 h-75 w-75 card-shadow">
+                            <div>
+                                <img className="team-img" src={shiv} alt="Shivendra Jat" />
+                            </div>
+                            <div>Shivendra Jat</div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-sm-4 d-flex justify-content-center align-items-center ">
+                        <div className="text-center fs-4 h-75 w-75 card-shadow">
+                            <div>
+                                <img className="team-img" src={jyoti} alt="Shivendra Jat" />
+                            </div>
+                            <div>Jyoti Kumari</div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-sm-4 d-flex justify-content-center align-items-center ">
+                        <div className="text-center fs-4 h-75 w-75 card-shadow">
+                            <div>
+                                <img className="team-img" src={saksham} alt="Shivendra Jat" />
+                            </div>
+                            <div>Saksham Pandey</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

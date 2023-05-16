@@ -85,7 +85,7 @@
 .card-shadow {
     border-radius: 20px;
     background-color: #0000003b;
-    box-shadow: rgba(0, 0, 0, 0.4s) 2px 4px 6px 2px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 6px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 @media screen and (max-width: 450px) {
     p {
@@ -96,6 +96,9 @@
     }
     #features {
         height: 180vh;
+    }
+    .landing {
+        height: 460vh;
     }
 }
 /* Contact Us */
@@ -125,4 +128,10 @@ textarea:focus {
 }
 .contact-img {
     height: 54vh;
+}
+.team-img {
+    margin-top: 15px;
+    height: 16vh;
+    border-radius: 20px;
+    box-shadow: rgb(21, 2, 31) 3px 7px 5px 1px;
 }
