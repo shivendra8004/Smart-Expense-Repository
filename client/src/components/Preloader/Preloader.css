@@ -1,7 +1,7 @@
 .preloader {
     height: 100vh;
     width: 100%;
-    background-color: #3c065e;
+    background-color: #9800f7;
     color: #fff;
     position: fixed;
     bottom: 0;
@@ -23,5 +23,6 @@
     font-weight: 800;
     overflow: hidden;
     font-family: "Merriweather", serif;
+    font-style: italic;
     color: #fff;
 }
