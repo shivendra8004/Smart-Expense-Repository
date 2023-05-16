@@ -1,54 +1,62 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .content {
-  height: 100vh;
+    height: 100vh;
 }
 .navbar {
-  background-color: aquamarine !important;
+    background-color: aquamarine !important;
 }
 .register {
-  min-height: 100vh !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    min-height: 100vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .register div,
 .login div {
-  width: 300px !important;
+    width: 300px !important;
 }
 .login {
-  min-height: 100vh !important;
+    min-height: 100vh !important;
 }
 .filters {
-  /* display: flex;
+    /* display: flex;
   justify-content: space-between;
   align-items: center; */
-  padding: 15px;
-  box-shadow: 0 0 5px;
+    padding: 15px;
+    box-shadow: 0 0 5px;
 }
 /* Antd icons */
 .anticon svg {
-  font-size: 19px;
-  cursor: pointer;
+    font-size: 19px;
+    cursor: pointer;
 }
 
 .active-icon {
-  color: black;
+    color: black;
 }
 .inactive-icon {
-  color: gray;
+    color: gray;
 }
 .switch-icons {
-  border: 1px solid rgb(0, 0, 0, 0.15);
-  border-radius: 6px;
-  padding: 0;
-  height: 32px;
+    border: 1px solid rgb(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 0;
+    height: 32px;
 }
 .btn {
-  height: 33px !important;
-  padding: 0 12px !important;
+    height: 33px !important;
+    padding: 0 12px !important;
 }
 /* Preloader Css */
