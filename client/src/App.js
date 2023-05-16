@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import LandingPage from "./pages/LandingPage";
+import PreLoader from "./components/Preloader/Preloader";
 
 function App() {
     return (
@@ -16,7 +17,16 @@ function App() {
                         </ProtectedRoutes>
                     }
                 />
-                <Route path="/" element={<LandingPage />} />
+                {/* <Route path="/" element={<LandingPage />} /> */}
+                <Route
+                    path="/"
+                    element={
+                        <div>
+                            <PreLoader />
+                            <LandingPage />
+                        </div>
+                    }
+                />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
             </Routes>
