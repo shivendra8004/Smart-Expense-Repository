@@ -13,6 +13,7 @@ const PreLoader = () => {
                 <span>Way</span>
                 <span>To</span>
                 <span>Manage</span>
+                <span>Expenses</span>
             </div>
         </div>
     );

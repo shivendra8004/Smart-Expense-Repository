@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import logo from "../../assets/smartExpenseLogo.svg";
+import landing from "../../assets/landing.png";
 import { Link } from "react-router-dom";
 import "./landingPage.css";
 const LandingPage = () => {
@@ -26,10 +27,10 @@ const LandingPage = () => {
     return (
         <div className="container-fluid landing">
             <div className="row nav position-fixed" style={{ width: "100vw" }}>
-                <div className="col-sm-2 d-flex align-items-center justify-content-center">
+                <div className="col-6 col-sm-2 d-flex align-items-center justify-content-center">
                     <img className="logo " src={logo} alt="Smart Expense" />
                 </div>
-                <div className="col-sm-8 d-flex align-items-center justify-content-center">
+                <div className="d-none col-sm-8 d-sm-flex align-items-center justify-content-center">
                     <div className="w-50 d-flex align-items-center justify-content-between">
                         <Link
                             onClick={() => {
@@ -69,7 +70,7 @@ const LandingPage = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="col-sm-2 d-flex align-items-center justify-content-center">
+                <div className="col-6 col-sm-2 d-flex align-items-center justify-content-center">
                     <div className="d-flex justify-content-center btn-shadow">
                         <Link className="link" to="/login">
                             <i class="bi bi-box-arrow-in-right pe-2"></i>
@@ -79,10 +80,84 @@ const LandingPage = () => {
                 </div>
             </div>
             <div className="container text-light " ref={scrollToHome} id="home">
-                <h1>Home</h1>
+                <div className="row align-items-center h-90">
+                    <div className="col col-sm-5 h-75 ">
+                        <div className="heading-text m-auto">
+                            <span className="d-block">Finding Balance</span>
+                            <span className="d-block">between</span>
+                            <span className="d-block">Income and Expense</span>
+                        </div>
+                        <div className="sub-text m-auto">
+                            Take control of your finances with Smart Expense, a powerful and intuitive expense management system. Say goodbye to the hassle of
+                            manual expense tracking and let our innovative platform streamline your financial management process.
+                        </div>
+                        <div className="btn-div m-auto mt-4">
+                            <Link to="/home" className="link btn-link w-25">
+                                Get Started
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="d-none d-sm-block col-sm-7 h-100 overflow-hidden">
+                        <img className="landingImg" src={landing} alt="" />
+                    </div>
+                </div>
+                <div className="row h-10">
+                    <div className="col ">
+                        <Link className="link" onClick={() => scrollToFeatures.current.scrollIntoView()}>
+                            <div className="d-flex justify-content-center">
+                                <i className="bi bi-mouse fs-3"></i>
+                            </div>
+                            <div className="fs-5 d-flex justify-content-center">Scroll</div>
+                        </Link>
+                    </div>
+                </div>
             </div>
             <div className="container text-light" ref={scrollToFeatures} id="features">
-                <h1>Features</h1>
+                <div className="row container-heading ">
+                    <div className="col fs-1 d-flex justify-content-center">Features</div>
+                </div>
+                <div className="row card-col">
+                    <div className="col-12 col-sm-6 d-flex align-items-center justify-content-center">
+                        <div className=" w-75 h-90 text-center card-shadow">
+                            <h4 className="card-heading">User Registration and Authentication</h4>
+                            <p className="w-90 m-auto pt-1">
+                                It ensures that only authorized users can access their accounts and interact with the Smart Expense system. It gives secure and
+                                personalized experience allowing peoples to manage their expenses confidently while maintaining the privacy of their personal
+                                information.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="col-12 col-sm-6  d-flex align-items-center justify-content-center">
+                        <div className=" w-75 h-90 text-center card-shadow">
+                            <h4 className=" card-heading">Expense Tracking and Categorization</h4>
+                            <p className="w-90 m-auto pt-1">
+                                This feature empowers users to manage their finances effectively. Smart Expense offers a process for adding expenses, allowing
+                                users to enter details such as the amount date and description. With a user friendly interface it becomes convenient and time
+                                saving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="row card-col">
+                    <div className="col-12 col-sm-6  d-flex align-items-center justify-content-center">
+                        <div className=" w-75 h-90 text-center card-shadow">
+                            <h4 className="card-heading">Reporting and Visualization</h4>
+                            <p className="w-90 m-auto pt-1">
+                                This feature give users a clear understanding of their financial status. By visual analytics, and comparative analysis, users
+                                can see insights into their spending habits, make informed financial decisions, and work towards achieving their targets.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="col-12 col-sm-6 d-flex align-items-center justify-content-center">
+                        <div className=" w-75 h-90 text-center card-shadow">
+                            <h4 className="card-heading">Real-time Data Updates</h4>
+                            <p className="w-90 m-auto pt-1">
+                                This feature enhances the overall user experience of the Smart Expense system by ensuring that users have access to the latest
+                                financial information. It provides financial insights and empowering users to effectively manage their expenses in real-time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="container text-light" ref={scrollToContact} id="contact">
                 <h1>Contact</h1>
