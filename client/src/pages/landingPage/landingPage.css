@@ -2,6 +2,7 @@
     background-color: #3c065e;
     font-family: "Merriweather", serif;
     height: 370vh;
+    overflow: hidden;
 }
 
 .nav {
@@ -83,6 +84,7 @@
     padding: 15px 0;
 }
 .card-shadow {
+    font-family: "Poppins", sans-serif;
     border-radius: 20px;
     background-color: #0000003b;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 6px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -97,8 +99,11 @@
     #features {
         height: 180vh;
     }
+    #about {
+        height: 200vh;
+    }
     .landing {
-        height: 460vh;
+        height: 515vh;
     }
 }
 /* Contact Us */
@@ -130,7 +135,7 @@ textarea:focus {
     height: 54vh;
 }
 .team-img {
-    margin-top: 15px;
+    margin: 15px 0;
     height: 16vh;
     border-radius: 20px;
     box-shadow: rgb(21, 2, 31) 3px 7px 5px 1px;

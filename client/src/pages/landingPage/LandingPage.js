@@ -237,28 +237,50 @@ const LandingPage = () => {
                 </div>
                 <div className="row h-75">
                     <div className="col-12 col-sm-4 d-flex justify-content-center align-items-center ">
-                        <div className="text-center fs-4 h-75 w-75 card-shadow">
+                        <div className="text-center fs-4 h-sm-75 w-75 card-shadow">
                             <div>
                                 <img className="team-img" src={shiv} alt="Shivendra Jat" />
                             </div>
                             <div>Shivendra Jat</div>
+                            <div className="w-75 m-auto fs-6">Full Stack Web Developer</div>
+                            <div className="w-75 m-auto fs-6 pt-sm-4 pt-3 pb-2 text-justify ">
+                                Proficient in MERN stack and adept at creating robust applications.
+                            </div>
                         </div>
                     </div>
                     <div className="col-12 col-sm-4 d-flex justify-content-center align-items-center ">
-                        <div className="text-center fs-4 h-75 w-75 card-shadow">
+                        <div className="text-center fs-4 h-sm-75 w-75 card-shadow">
                             <div>
-                                <img className="team-img" src={jyoti} alt="Shivendra Jat" />
+                                <img className="team-img" src={jyoti} alt="Jyoti Kumari" />
                             </div>
                             <div>Jyoti Kumari</div>
+                            <div className="w-75 m-auto fs-6">Full Stack Web Developer</div>
+                            <div className="w-75 m-auto fs-6 pt-sm-4 pt-3 pb-2 text-justify ">
+                                Excellent team player with a passion for continuous improvement.
+                            </div>
                         </div>
                     </div>
                     <div className="col-12 col-sm-4 d-flex justify-content-center align-items-center ">
-                        <div className="text-center fs-4 h-75 w-75 card-shadow">
+                        <div className="text-center fs-4 h-sm-75 w-75 card-shadow">
                             <div>
                                 <img className="team-img" src={saksham} alt="Shivendra Jat" />
                             </div>
                             <div>Saksham Pandey</div>
+                            <div className="w-75 m-auto fs-6">Full Stack Web Developer</div>
+                            <div className="w-75 m-auto fs-6 pt-sm-4 pt-3 pb-2  text-justify ">
+                                Expertise in both front-end and back-end development technologies.
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div className="row container-heading ">
+                    <div className="col ">
+                        <Link className="link" onClick={() => scrollToHome.current.scrollIntoView()}>
+                            <div className="d-flex justify-content-center">
+                                <i className="bi bi-mouse fs-3"></i>
+                            </div>
+                            <div className="fs-5 d-flex justify-content-center">Let's Go Back</div>
+                        </Link>
                     </div>
                 </div>
             </div>
