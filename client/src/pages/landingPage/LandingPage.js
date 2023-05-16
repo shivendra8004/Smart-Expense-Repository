@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import logo from "../../assets/smartExpenseLogo.svg";
 import landing from "../../assets/landing.png";
+import contact from "../../assets/contact.png";
 import { Link } from "react-router-dom";
 import "./landingPage.css";
 const LandingPage = () => {
@@ -118,7 +119,7 @@ const LandingPage = () => {
                 </div>
                 <div className="row card-col">
                     <div className="col-12 col-sm-6 d-flex align-items-center justify-content-center">
-                        <div className=" w-75 h-90 text-center card-shadow">
+                        <div className=" w-sm-75 h-90 text-center card-shadow">
                             <h4 className="card-heading">User Registration and Authentication</h4>
                             <p className="w-90 m-auto pt-1">
                                 It ensures that only authorized users can access their accounts and interact with the Smart Expense system. It gives secure and
@@ -128,7 +129,7 @@ const LandingPage = () => {
                         </div>
                     </div>
                     <div className="col-12 col-sm-6  d-flex align-items-center justify-content-center">
-                        <div className=" w-75 h-90 text-center card-shadow">
+                        <div className=" w-sm-75 h-90 text-center card-shadow">
                             <h4 className=" card-heading">Expense Tracking and Categorization</h4>
                             <p className="w-90 m-auto pt-1">
                                 This feature empowers users to manage their finances effectively. Smart Expense offers a process for adding expenses, allowing
@@ -140,7 +141,7 @@ const LandingPage = () => {
                 </div>
                 <div className="row card-col">
                     <div className="col-12 col-sm-6  d-flex align-items-center justify-content-center">
-                        <div className=" w-75 h-90 text-center card-shadow">
+                        <div className=" w-sm-75 h-90 text-center card-shadow">
                             <h4 className="card-heading">Reporting and Visualization</h4>
                             <p className="w-90 m-auto pt-1">
                                 This feature give users a clear understanding of their financial status. By visual analytics, and comparative analysis, users
@@ -149,7 +150,7 @@ const LandingPage = () => {
                         </div>
                     </div>
                     <div className="col-12 col-sm-6 d-flex align-items-center justify-content-center">
-                        <div className=" w-75 h-90 text-center card-shadow">
+                        <div className=" w-sm-75 h-90 text-center card-shadow">
                             <h4 className="card-heading">Real-time Data Updates</h4>
                             <p className="w-90 m-auto pt-1">
                                 This feature enhances the overall user experience of the Smart Expense system by ensuring that users have access to the latest
@@ -158,9 +159,64 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
+                <div className="row container-heading ">
+                    <div className="col ">
+                        <Link className="link" onClick={() => scrollToContact.current.scrollIntoView()}>
+                            <div className="d-flex justify-content-center">
+                                <i className="bi bi-mouse fs-3"></i>
+                            </div>
+                            <div className="fs-5 d-flex justify-content-center">Scroll</div>
+                        </Link>
+                    </div>
+                </div>
             </div>
             <div className="container text-light" ref={scrollToContact} id="contact">
-                <h1>Contact</h1>
+                <div className="row container-heading">
+                    <div className="col fs-1 d-flex justify-content-center">Contact Us</div>
+                </div>
+                <div className="row h-90">
+                    <div className=" col-12 col-sm-6 d-flex align-items-center">
+                        <div className="w-50 h-75  m-auto">
+                            <label htmlFor="name" className="form-label m-0 fs-6">
+                                Full Name
+                            </label>
+                            <input type="text" className="form-control mb-2" id="name" placeholder="Shivendra Jat" />
+                            <label htmlFor="email" className="form-label m-0 mt-1 fs-6">
+                                Enter Email
+                            </label>
+                            <input type="email" className="form-control mb-2" id="email" placeholder="user@text.com" />
+                            <label htmlFor="message" className="form-label m-0 mt-1 fs-6">
+                                Message
+                            </label>
+                            <textarea type="text" rows="8" className="form-control mb-2" id="message" placeholder="Great Project..." />
+                            <button className="btn" type="submit">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                    <div className="col-12 col-sm-6">
+                        <div className="h-75 w-75 text-center">
+                            <img className="contact-img " src={contact} alt="contact us" />
+                        </div>
+                        <div className="d-flex justify-content-evenly h-25 w-75">
+                            <Link to="https://wa.me/7828278004?text=Hey%20Shivendra%2C%20Lets%20have%20a%20chat" target="_blank">
+                                <div>
+                                    <i className="bi bi-whatsapp fs-1 text-success border border-success border-2 p-2 ps-3 pe-3 rounded"></i>
+                                </div>
+                            </Link>
+                            <Link to="https://www.linkedin.com/in/shivendra-jat-aab841177/" target="_blank">
+                                <div>
+                                    <i class="bi bi-linkedin fs-1 text-primary border border-primary border-2 p-2 ps-3 pe-3 rounded"></i>
+                                </div>
+                            </Link>
+                            <Link className="link" to="https://github.com/SHIVENDRA8004" target="_blank">
+                                <div>
+                                    <i class="bi bi-github fs-1  border  border-2 p-2 ps-3 pe-3 rounded"></i>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="container text-light" ref={scrollToAbout} id="about">
                 <h1>About</h1>
