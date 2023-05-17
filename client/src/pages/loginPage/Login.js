@@ -36,34 +36,42 @@ const Login = () => {
     }, [navigate]);
     return (
         <>
-            {loading && <Spinner />}
             <div className="container-fluid login-page">
+                {loading && <Spinner />}
                 <div className="row h-100">
-                    <div className="col-12 col-sm-6 h-100 d-flex align-items-center">
-                        <div className="h-60 w-50 m-auto text-center card-shadow">
-                            <img height="330" src={login3} alt="Login" className="mt-4" />
-                            <p className="mt-4">Access your personalized dashboard by logging into your account."</p>
-                        </div>
-                    </div>
-                    <div className="col-12 col-sm-6 h-100 d-flex align-items-center">
-                        <div className="h-60 w-50 m-auto text-center card-shadow p-4">
-                            <h2>Login</h2>
-                            <div className="h-75 w-75 m-auto">
-                                <Form layout="vertical" onFinish={handleSubmit}>
-                                    <Form.Item label="Email" name="email">
-                                        <Input type="email" />
-                                    </Form.Item>
-                                    <Form.Item label="Password" name="password">
-                                        <Input type="password" />
-                                    </Form.Item>
-                                    <div className="d-flex justify-content-between">
-                                        <Link to="/register">New User? Register</Link>
-                                        <button className="btn btn-primary">Login</button>
-                                    </div>
-                                </Form>
+                    <div className="col-12 col-sm-12 h-100 d-flex justify-content-center align-items-center">
+                        <div className="card-shadow h-60 w-75 d-flex align-items-center">
+                            <div className="d-none d-sm-block w-50 m-auto text-center">
+                                <img height="330" src={login3} alt="Login" className="mt-4" />
+                                <p className=" w-75 m-auto">Access your personalized dashboard by logging into your account."</p>
+                            </div>
+                            <div className="w-sm-50 m-auto text-center p-4">
+                                <h2>Login</h2>
+                                <div className="h-75 w-sm-75 m-auto">
+                                    <Form layout="vertical" onFinish={handleSubmit}>
+                                        <Form.Item label={<label style={{ color: "white" }}>Email</label>} name="email">
+                                            <Input type="email" style={{ color: "white" }} />
+                                        </Form.Item>
+                                        <Form.Item label={<label style={{ color: "white" }}>Password</label>} name="password">
+                                            <Input type="password" />
+                                        </Form.Item>
+                                        <div className="d-block d-sm-flex justify-sm-content-evenly align-items-center">
+                                            <Link className="link" to="/register">
+                                                New User?.Register
+                                            </Link>
+                                            <button className="btn btn-primary d-block ms-sm-2">Login</button>
+                                        </div>
+                                    </Form>
+                                    <Link className="link mt-sm-4" to="/">
+                                        Home
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {/* <div className="col-12 col-sm-6 h-100 d-flex align-items-center">
+                        
+                    </div> */}
                 </div>
             </div>
             {/* <div className="login d-flex align-items-center justify-content-center">
