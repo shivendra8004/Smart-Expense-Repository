@@ -185,7 +185,7 @@ const LandingPage = () => {
                             </label>
                             <input type="text" className="form-control mb-2" id="name" placeholder="Shivendra Jat" />
                             <label htmlFor="email" className="form-label m-0 mt-1 fs-6">
-                                Enter Email
+                                Email
                             </label>
                             <input type="email" className="form-control mb-2" id="email" placeholder="user@text.com" />
                             <label htmlFor="message" className="form-label m-0 mt-1 fs-6">

@@ -1,0 +1,11 @@
+.login-page {
+    height: 100vh;
+    background-color: #3c065e;
+    color: white;
+}
+.h-60 {
+    height: 60%;
+}
+.ant-form-item-label {
+    color: #ff0000 !important; /* Replace with your desired color value */
+}
