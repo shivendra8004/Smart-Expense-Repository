@@ -4,8 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../../components/Spinner";
 import "./login.css";
-import login1 from "../../assets/login1.png";
-import login2 from "../../assets/login2.png";
 import login3 from "../../assets/login3.png";
 const Login = () => {
     // To use Navigate
